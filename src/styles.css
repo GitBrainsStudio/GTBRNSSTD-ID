@@ -1,10 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@import './assets/bootstrap-grid.min.css';
+@import './assets/bootstrap-grid.css';
 
 
 :root
 {
     --footer-height: 30px;
+    --font-sans-serif: "PT Sans",sans-serif;
 }
 
 main
@@ -15,6 +16,10 @@ main
 body
 {
     margin: 0;
+    font-family: var(--font-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
 input
@@ -41,8 +46,6 @@ button:hover
     background-color: #285170;
 }
 
-
-
 .horizontal-ul
 {
     list-style: none;
@@ -56,9 +59,3 @@ button:hover
     display: inline;
     margin-right: 10px;
 }
-
-.hovered:hover
-{
-    cursor: pointer;
-}
-
