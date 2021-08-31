@@ -2,14 +2,19 @@
 @import './assets/bootstrap-grid.min.css';
 
 
-main
+:root
 {
     --footer-height: 30px;
 }
 
-.wrap
+main
 {
     min-height: calc(100vh - var(--footer-height));
+}
+
+body
+{
+    margin: 0;
 }
 
 
