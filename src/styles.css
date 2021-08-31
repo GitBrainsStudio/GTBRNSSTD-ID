@@ -17,6 +17,15 @@ body
     margin: 0;
 }
 
+input
+{
+    padding: .6em .7em;
+    border: 1px solid rgba(51, 51, 51, 0.349);
+    border-radius: 3px;
+    outline: 0;
+}
+
+
 
 .horizontal-ul
 {
@@ -36,3 +45,4 @@ body
 {
     cursor: pointer;
 }
+
