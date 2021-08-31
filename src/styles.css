@@ -1,2 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-@import './assets/bootstrap-grid.min.css'
+@import './assets/bootstrap-grid.min.css';
+
+
+.horizontal-ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.horizontal-ul li
+{
+    padding-bottom: .35rem;
+    display: inline;
+    margin-right: 10px;
+}
