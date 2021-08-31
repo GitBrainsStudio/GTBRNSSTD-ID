@@ -2,6 +2,13 @@
 @import './assets/bootstrap-grid.min.css';
 
 
+main
+{
+    --footer-height: 30px;
+}
+
+
+
 .horizontal-ul
 {
     list-style: none;
