@@ -1,22 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthenticationComponent } from './components/authentication/authentication.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { AuthenticationModule } from './modules/authentication/authentication.module';
+import { SnackbarModule } from './modules/snackbar/snackbar.module';
+import { ClientsModule } from './modules/clients/clients.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthenticationComponent,
-    HeaderComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AuthenticationModule,
+    AppRoutingModule,
+    SnackbarModule,
+    ClientsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

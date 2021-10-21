@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SnackbarService } from '../snackbar/snackbar.service';
 
 @Component({
   selector: 'app-authentication',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthenticationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private snackBarService:SnackbarService) { }
 
   ngOnInit(): void {
   }
-
+  
+  login()
+  {
+    this.snackBarService.showSnackBar('Добро пожаловать в экосистему GitBrainsStudio')
+  }
 }
