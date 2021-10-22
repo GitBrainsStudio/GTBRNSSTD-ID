@@ -1,26 +1,33 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthenticationComponent } from './modules/authentication/authentication.component';
-import { ClientDetailsComponent } from './modules/client/client-details/client-details.component';
-import { ClientEditComponent } from './modules/client/client-edit/client-edit.component';
-import { ClientsComponent } from './modules/clients/clients.component';
 
 const routes: Routes = [
+
   {
-    path: 'auth', component: AuthenticationComponent
+    path: 'auth',
+    loadChildren: () => import('./pages/authentication-page/authentication-page.module').then((m) => m.AuthenticationPageModule),
   },
   {
-    path: 'clients', component: ClientsComponent
+    path: 'clients',
+    loadChildren: () => import('./pages/clients-page/clients-page.module').then((m) => m.ClientsPageModule),
   },
   {
-    path: 'clients/:client_id', component: ClientDetailsComponent
+    path: 'client/new',
+    loadChildren: () => import('./pages/client-new-page/client-new-page.module').then((m) => m.ClientsNewPageModule),
+  },
+ 
+  {
+    path: 'client/:id',
+    loadChildren: () => import('./pages/client-details-page/client-details-page.module').then((m) => m.ClientsDetailsPageModule),
   },
   {
-    path: 'clients/:client_id/new', component: ClientEditComponent
+    path: 'client/:id/edit',
+    loadChildren: () => import('./pages/client-edit-page/client-edit-page.module').then((m) => m.ClientsEditPageModule),
   },
   {
-    path: 'clients/:client_id/edit', component: ClientEditComponent
+    path: '**', redirectTo : 'clients' 
   }
+ 
 ];
 
 @NgModule({
