@@ -1,1 +1,31 @@
-<p>client-details-page works!</p>
+<main>
+
+
+    <app-header-default></app-header-default>
+
+    <div class="container p-3">
+       
+        <div class="row align-items-center">
+           <h4>Client details</h4> 
+        </div>
+
+        <div class="col" style="width: 300px;">
+            
+            <span style="font-size: 12px;">{{ pageService.clientLoadingMessage }}</span>
+
+            <ng-container *ngIf="!pageService.clientLoading;">
+                <app-client [client]="pageService.client"></app-client> 
+
+                <div class="row d-flex justify-content-end mt-2">
+                    <button (click)="pageService.edit()">Edit</button>
+                </div>
+            </ng-container>
+
+        </div>
+        
+        
+
+    </div>
+
+</main>
+<app-footer-default></app-footer-default>

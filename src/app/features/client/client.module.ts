@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClientComponent } from './components/client/client.component';
 import { ClientListComponent } from './components/client-list/client-list.component';
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ClientService } from './services/client.service';
 
 @NgModule({
   declarations: [
@@ -10,11 +12,14 @@ import { ClientListComponent } from './components/client-list/client-list.compon
     ClientListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    HttpClientModule
   ],
   exports: [
     ClientComponent,
     ClientListComponent
-  ]
+  ],
+  providers: [ClientService]
 })
 export class ClientModule { }
