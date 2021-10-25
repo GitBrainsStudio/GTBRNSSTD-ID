@@ -25,7 +25,6 @@ export class ClientDetailsPageService
 
                 setTimeout(() => 
                 {
-                    console.log(client)
                     this.client = client;
                     this.clientLoading = false
 

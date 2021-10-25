@@ -11,7 +11,6 @@ export class ClientDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.client)
   }
 
   @Input() client:Client;
