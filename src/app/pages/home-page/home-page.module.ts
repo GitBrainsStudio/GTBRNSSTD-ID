@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClientsPageRoutingModule } from './clients-page-routing.module';
-import { ClientsPageComponent } from './clients-page.component';
 import { FooterModule } from 'src/app/features/footer/footer.module';
 import { HeaderModule } from 'src/app/features/header/header.module';
 import { BadgeModule } from 'src/app/features/badge/badge.module';
+import { HomePageComponent } from './home-page.component';
+import { HomePageRoutingModule } from './home-page-routing.module';
+import { ClientService } from 'src/app/features/client/services/client.service';
 
 
 
 @NgModule({
-  declarations: [ClientsPageComponent],
+  declarations: [HomePageComponent],
   imports: [
     CommonModule,
-    ClientsPageRoutingModule,
+    HomePageRoutingModule,
     HeaderModule,
     FooterModule,
     BadgeModule
-  ]
+  ],
+  providers: [ClientService]
 })
-export class ClientsPageModule { }
+export class HomePageModule { }

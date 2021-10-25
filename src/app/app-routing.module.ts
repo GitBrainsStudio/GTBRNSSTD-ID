@@ -8,9 +8,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/authentication-page/authentication-page.module').then((m) => m.AuthenticationPageModule),
   },
   {
-    path: 'clients',
-    loadChildren: () => import('./pages/clients-page/clients-page.module').then((m) => m.ClientsPageModule),
+    path: '',
+    loadChildren: () => import('./pages/home-page/home-page.module').then((m) => m.HomePageModule),
   },
+
   {
     path: 'clients/new',
     loadChildren: () => import('./pages/client-new-page/client-new-page.module').then((m) => m.ClientsNewPageModule),
