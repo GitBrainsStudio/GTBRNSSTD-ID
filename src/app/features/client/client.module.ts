@@ -5,20 +5,25 @@ import { ClientListComponent } from './components/client-list/client-list.compon
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ClientService } from './services/client.service';
+import { ClientDetailsComponent } from './components/client-details/client-details.component';
+import { BadgeModule } from '../badge/badge.module';
 
 @NgModule({
   declarations: [
     ClientComponent,
-    ClientListComponent
+    ClientListComponent,
+    ClientDetailsComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BadgeModule
   ],
   exports: [
     ClientComponent,
-    ClientListComponent
+    ClientListComponent,
+    ClientDetailsComponent
   ],
   providers: [ClientService]
 })
