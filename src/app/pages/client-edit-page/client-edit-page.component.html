@@ -1,1 +1,32 @@
-<p>client-edit-page works!</p>
+<main>
+
+
+    <app-header-default></app-header-default>
+
+    <div class="container p-3">
+       
+        <div class="row align-items-center">
+           <h4>Edit client</h4> 
+        </div>
+
+        <div class="col" style="width: 300px;">
+            
+            <span style="font-size: 12px;">{{ pageService.clientLoadingMessage }}</span>
+
+            <ng-container *ngIf="!pageService.clientLoading;">
+                <app-client [client]="pageService.client"></app-client> 
+
+                <hr>
+                <div class="row d-flex justify-content-end mt-2">
+                    <button (click)="pageService.saveChanges()" class="d-flex justify-content-center"> Save changes    <i class="material-icons ml-1" style="font-size: 14px;" (click)="pageService.saveChanges()">save</i></button>
+                </div>
+            </ng-container>
+
+        </div>
+        
+        
+
+    </div>
+
+</main>
+<app-footer-default></app-footer-default>

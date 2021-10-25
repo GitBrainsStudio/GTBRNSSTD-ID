@@ -1,14 +1,13 @@
-.client-preview
+.badge
 {
-    max-width: 300px;
     border-radius: 5px;
     background-color: #333;
+    padding: 5px;
+    font-size: 12px;
     color: #fff;
-    padding: 10px;
 }
 
-h4:hover
+.badge:hover
 {
     cursor: pointer;
-    color: orange;
 }

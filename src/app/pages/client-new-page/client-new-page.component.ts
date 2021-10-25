@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientNewPageService } from 'src/app/features/client/services/client-new-page.service';
 
 @Component({
   selector: 'app-client-new-page',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientNewPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public pageService:ClientNewPageService) { }
 
   ngOnInit(): void {
   }
+
 
 }

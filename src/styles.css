@@ -45,7 +45,6 @@ button
     background-color: #333;
     color: #fff;
     cursor: pointer;
-    width: 100%;
     transition: .5s;
 }
 
