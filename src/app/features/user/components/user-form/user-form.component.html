@@ -1,10 +1,23 @@
 <div class="col">
     <div class="row mt-2">
         <span style="font-size: 12px;">Login</span>
-        <input [(ngModel)]="user.Login">
+        <input [(ngModel)]="user.Login"  style="width: 100%;">
     </div>
     <div class="row mt-2">
         <span style="font-size: 12px;">ID</span>
-        <input [(ngModel)]="user.Id">
+        <input [(ngModel)]="user.Id" style="width: 100%;">
+    </div>
+</div>
+
+<div class="col mt-2">
+
+    <div class="row d-flex align-items-center">
+
+        <span style="font-size: 12px;">Available programs: </span> 
+        
+    </div>
+
+    <div class="row">
+        <app-client-form-adding-in-user [user]="user" ></app-client-form-adding-in-user>
     </div>
 </div>

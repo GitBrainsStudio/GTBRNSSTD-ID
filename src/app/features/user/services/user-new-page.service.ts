@@ -5,7 +5,7 @@ import { User } from "../models/user";
 import { UserService } from "./user.service";
 
 @Injectable()
-export class UserEditPageService
+export class UserNewPageService
 {
 
     constructor(
@@ -16,28 +16,10 @@ export class UserEditPageService
 
     }
 
-    getuserById(id:string)
-    {
-        this.userService.getById(id)
-        .pipe(finalize(() => {  }))
-        .subscribe(user => 
-            {
-                this.userLoadingMessage = "User was loaded successfully!"
-
-                setTimeout(() => 
-                {
-                    this.user = user;
-                    this.userLoading = false
-
-                }, 1000)
-            })
-    }
-
-    saveChanges()
+    save()
     {
         if (this.user.valid)
         {
-            
             alert('saved!')
         }
     }

@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterModule } from 'src/app/features/footer/footer.module';
 import { HeaderModule } from 'src/app/features/header/header.module';
-import { ClientModule } from 'src/app/features/client/client.module';
-import { ClientNewPageService } from 'src/app/features/client/services/client-new-page.service';
 import { UserNewPageComponent } from './user-new-page.component';
 import { UserNewPageRoutingModule } from './user-new-page-routing.module';
+import { UserNewPageService } from 'src/app/features/user/services/user-new-page.service';
+import { UserModule } from 'src/app/features/user/user.module';
 
 
 
@@ -18,7 +18,8 @@ import { UserNewPageRoutingModule } from './user-new-page-routing.module';
     UserNewPageRoutingModule,
     FooterModule,
     HeaderModule,
+    UserModule
   ],
-  providers: []
+  providers: [UserNewPageService]
 })
 export class UserNewPageModule { }

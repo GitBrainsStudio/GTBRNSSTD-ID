@@ -29,7 +29,7 @@ const routes: Routes = [
   {
     path: 'users/new',
     loadChildren: () => import('./pages/user-new-page/user-new-page.module').then((m) => m.UserNewPageModule),
-  },
+  }, 
  
   {
     path: 'users/:id',

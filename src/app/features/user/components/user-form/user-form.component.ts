@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { User } from '../../models/user';
 
 @Component({
@@ -8,10 +8,13 @@ import { User } from '../../models/user';
 })
 export class UserFormComponent implements OnInit {
 
-  constructor() { }
+  constructor() {  }
 
   ngOnInit(): void {
+
   }
 
   @Input() user:User;
+
+  clientFormAddingVisible:boolean = false;
 }

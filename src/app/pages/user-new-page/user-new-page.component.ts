@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UserNewPageService } from 'src/app/features/user/services/user-new-page.service';
 
 @Component({
   selector: 'app-user-new-page',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserNewPageComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit(): void {
+  }
+  
+  constructor(
+    public pageService:UserNewPageService
+    ) 
+  { 
+      
   }
 
 }

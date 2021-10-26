@@ -42,6 +42,6 @@ export class ClientEditPageService
     clientLoadingMessage:string = "Client loading..."
     clientLoading:boolean = true;
     clientIdFromRouteParams:string;
-    client:Client = new Client('', '', '', '')
+    client:Client = new Client('', '', '', '', [])
 
 }

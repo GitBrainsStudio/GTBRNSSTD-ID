@@ -6,6 +6,7 @@ import { BadgeModule } from '../badge/badge.module';
 import { UserService } from './services/user.service';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
+import { ClientModule } from '../client/client.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UserFormComponent } from './components/user-form/user-form.component';
     CommonModule,
     FormsModule,
     HttpClientModule,
-    BadgeModule
+    BadgeModule,
+    ClientModule
   ],
   exports: [
     UserDetailsComponent,

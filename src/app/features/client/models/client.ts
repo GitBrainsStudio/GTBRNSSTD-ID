@@ -1,21 +1,26 @@
+import { Role } from "../../user/models/role";
+
 export class Client
 {
     Id:string;
     Name:string;
     Description:string;
     URL:string;
+    Roles:Role[]
 
     constructor(
         id:string,
         name:string,
         description:string,
-        url:string
+        url:string,
+        roles:Role[]
     )
     {
         this.Id = id
         this.Name = name
         this.Description = description
         this.URL = url
+        this.Roles = roles
     }
     
     get valid() : boolean

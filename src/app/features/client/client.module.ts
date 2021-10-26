@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClientService } from './services/client.service';
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 import { BadgeModule } from '../badge/badge.module';
+import { ClientFormAddingInUserComponent } from './components/client-form-adding-in-user/client-form-adding-in-user.component';
 
 @NgModule({
   declarations: [
     ClientComponent,
     ClientListComponent,
     ClientDetailsComponent,
+    ClientFormAddingInUserComponent,
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { BadgeModule } from '../badge/badge.module';
   exports: [
     ClientComponent,
     ClientListComponent,
-    ClientDetailsComponent
+    ClientDetailsComponent,
+    ClientFormAddingInUserComponent
   ],
   providers: [ClientService]
 })

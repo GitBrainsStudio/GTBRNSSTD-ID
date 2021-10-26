@@ -1,0 +1,26 @@
+
+    <ng-container *ngIf="!programsTree; else programz">
+
+        <span style="font-size: 12px;">Programs loading...</span>
+
+    </ng-container>
+
+    <ng-template #programz>
+        <div class="row program"  *ngFor="let program of programsTree">
+
+            <div class="col">
+                 {{ program.Name }} 
+    
+                <div class="col ml-5" style="border-left: 1px gray solid; padding-left: 5px;">
+    
+                    <div class="row" *ngFor="let role of program.Roles;">
+                        <label> {{ role.Name }}
+                            <input type="checkbox" [(ngModel)]="role.Checked" (change)="user.updateRole(role)">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </ng-template>

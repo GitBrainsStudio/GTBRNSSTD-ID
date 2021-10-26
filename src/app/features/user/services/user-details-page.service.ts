@@ -40,5 +40,5 @@ export class UserDetailsPageService
     userLoadingMessage:string = "User loading..."
     userLoading:boolean = true;
     userIdFromParams:string;
-    user:User = new User('', '',)
+    user:User = new User('', '', [])
 }
