@@ -1,9 +1,13 @@
+import { Observable } from "rxjs"
+import { Client } from "../../client/models/client"
+
 export class Role
 {
     Id:string
     Name:string
     Checked:boolean
     ProgramId:string
+    Program:Observable<Client>
 
     check()
     {

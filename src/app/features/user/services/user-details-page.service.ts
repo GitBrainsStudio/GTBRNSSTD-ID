@@ -10,10 +10,7 @@ export class UserDetailsPageService
     constructor(
         private userService:UserService,
         private router:Router
-        ) 
-    { 
-
-    }
+        ) {  }
 
     getUserById(id:string)
     {

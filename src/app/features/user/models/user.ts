@@ -1,3 +1,4 @@
+import { Client } from "../../client/models/client";
 import { Role } from "./role";
 
 
@@ -5,7 +6,9 @@ export class User
 {
     Id:string;
     Login:string;
-    Roles:Role[]
+    AccessedPrograms:Client[]
+    Roles:Role[];
+
 
     constructor(
         id:string,
@@ -18,25 +21,17 @@ export class User
         this.Roles = roles
     }
 
-    addRole(role:Role)
+    openAccessToTheProgram(program:Client, role:Role)
     {
-        if (!this.Roles.some(r => r.Id == role.Id))
-            this.Roles.push(role)
+        this.AccessedPrograms.push(program)
+    }
+
+    closeAccessToTheProgram(program:Client)
+    {
+        let programIndex = this.AccessedPrograms.findIndex((p) => p.Id == program.Id)
+        this.AccessedPrograms.splice(programIndex, 1)
     }
     
-
-    removeRole(role:Role)
-    {
-        let index = this.Roles.findIndex(r => r.Id == role.Id)
-        this.Roles.splice(index, 1)
-    }
-
-    updateRole(role:Role)
-    {
-        if (role.Checked)
-            this.addRole(role)
-        else this.removeRole(role)
-    }
 
     get valid() : boolean
     {

@@ -8,9 +8,9 @@ import { ClientService } from '../../services/client.service';
   templateUrl: './client-form-adding-in-user.component.html',
   styleUrls: ['./client-form-adding-in-user.component.css']
 })
-export class ClientFormAddingInUserComponent implements OnInit {
+export class ClientFormAddingInUserComponent {
 
-  constructor(private clientService:ClientService) { }
+/*   constructor(private clientService:ClientService) { }
 
   ngOnInit(): void {
     this.clientService.getAll()
@@ -35,4 +35,18 @@ export class ClientFormAddingInUserComponent implements OnInit {
 
   @Input() user:User
 
+  programChanged(program:Client)
+  {
+    if (program.Roles.length > 0)
+    {
+
+    }
+  }
+
+  @Output() programAdded = new EventEmitter<Client>()
+  @Output() programDeleted = new EventEmitter<Client>()
+
+  checkValue(event: any){
+    console.log(event);
+ } */
 }

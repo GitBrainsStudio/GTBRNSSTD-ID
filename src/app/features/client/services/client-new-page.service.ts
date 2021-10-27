@@ -18,5 +18,5 @@ export class ClientNewPageService
         }
     }
 
-    client:Client = new Client('', '', '', '', [])
+    client:Client = new Client('', '', '', '', 1)
 }

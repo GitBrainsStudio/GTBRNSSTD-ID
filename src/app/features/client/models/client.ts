@@ -6,21 +6,21 @@ export class Client
     Name:string;
     Description:string;
     URL:string;
-    Roles:Role[]
+    UsersCount:number
 
     constructor(
         id:string,
         name:string,
         description:string,
         url:string,
-        roles:Role[]
+        usersCount:number
     )
     {
         this.Id = id
         this.Name = name
         this.Description = description
         this.URL = url
-        this.Roles = roles
+        this.UsersCount = usersCount
     }
     
     get valid() : boolean

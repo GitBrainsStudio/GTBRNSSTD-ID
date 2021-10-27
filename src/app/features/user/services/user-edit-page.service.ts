@@ -37,7 +37,7 @@ export class UserEditPageService
     {
         if (this.user.valid)
         {
-            
+            console.log(this.user)
             alert('saved!')
         }
     }
