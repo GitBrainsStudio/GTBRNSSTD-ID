@@ -6,6 +6,7 @@ export class Client
     Name:string;
     Description:string;
     URL:string;
+    Roles:Role[]
     UsersCount:number
 
     constructor(
@@ -13,6 +14,7 @@ export class Client
         name:string,
         description:string,
         url:string,
+        roles:Role[],
         usersCount:number
     )
     {
@@ -20,6 +22,7 @@ export class Client
         this.Name = name
         this.Description = description
         this.URL = url
+        this.Roles = roles
         this.UsersCount = usersCount
     }
     

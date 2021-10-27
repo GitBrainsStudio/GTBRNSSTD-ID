@@ -16,7 +16,7 @@ export class ClientService
 
     getById(id:string) : Observable<Client>
     {
-        return of<Client>(new Client('asdasd', 'asdasd', 'asdasd', 'asdasdasd', 11))
+        return of<Client>(new Client('asdasd', 'asdasd', 'asdasd', 'asdasdasd', [], 11))
     }
 
     getAll() : Observable<Client[]>
@@ -34,12 +34,12 @@ export class ClientService
         ]
 
         let fakeClients:Client[] = [
-            new Client('C08CA4CE990F55DAE05400E000A92421', 'Program 1', 'x', 'x', 10),
-            new Client('C08CA4CE990F55DAE05400E000A92422', 'Program 2', 'x', 'x', 12),
-            new Client('C08CA4CE990F55DAE05400E000A92423', 'Program 3', 'x', 'x', 44),
-            new Client('C08CA4CE990F55DAE05400E000A92424', 'Program 4', 'x', 'x', 1),
-            new Client('C08CA4CE990F55DAE05400E000A92425', 'Program 5', 'x', 'x', 2),
-            new Client('C08CA4CE990F55DAE05400E000A92426', 'Program 6', 'x', 'x', 0),
+            new Client('C08CA4CE990F55DAE05400E000A92421', 'Program 1', 'x', 'x', fakeRoles1, 10),
+            new Client('C08CA4CE990F55DAE05400E000A92422', 'Program 2', 'x', 'x', fakeRoles1, 12),
+            new Client('C08CA4CE990F55DAE05400E000A92423', 'Program 3', 'x', 'x',fakeRoles1, 44),
+            new Client('C08CA4CE990F55DAE05400E000A92424', 'Program 4', 'x', 'x', fakeRoles2, 1),
+            new Client('C08CA4CE990F55DAE05400E000A92425', 'Program 5', 'x', 'x', fakeRoles1, 2),
+            new Client('C08CA4CE990F55DAE05400E000A92426', 'Program 6', 'x', 'x', fakeRoles1, 0),
         ]
         return of<Client[]>(
             fakeClients
