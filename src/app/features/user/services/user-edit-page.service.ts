@@ -22,14 +22,8 @@ export class UserEditPageService
         .pipe(finalize(() => {  }))
         .subscribe(user => 
             {
-                this.userLoadingMessage = "User was loaded successfully!"
-
-                setTimeout(() => 
-                {
-                    this.user = user;
-                    this.userLoading = false
-
-                }, 1000)
+                this.user = user;
+                this.userLoading = false
             })
     }
 
@@ -37,12 +31,10 @@ export class UserEditPageService
     {
         if (this.user.valid)
         {
-            console.log(this.user)
             alert('saved!')
         }
     }
 
-    userLoadingMessage:string = "User loading..."
     userLoading:boolean = true;
     userIdFromRouteParams:string;
     user:User = new User('', '', [])

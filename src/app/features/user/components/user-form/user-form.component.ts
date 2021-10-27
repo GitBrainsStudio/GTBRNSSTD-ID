@@ -1,4 +1,8 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Client } from 'src/app/features/client/models/client';
+import { ClientService } from 'src/app/features/client/services/client.service';
+import { Role } from '../../models/role';
 import { User } from '../../models/user';
 
 @Component({
@@ -8,13 +12,20 @@ import { User } from '../../models/user';
 })
 export class UserFormComponent implements OnInit {
 
-  constructor() {  }
+  constructor(public clientService:ClientService) {
+      this.clients$ = clientService.getAll();
+    }
 
   ngOnInit(): void {
 
   }
 
   @Input() user:User;
-
-  clientFormAddingVisible:boolean = false;
+  clients$:Observable<Client[]>
+  selectedProgram:Client
+  
+  userHasRole(role:Role) : boolean
+  {
+     return this.user.Roles.some(r => r.Id == role.Id)
+  }
 }

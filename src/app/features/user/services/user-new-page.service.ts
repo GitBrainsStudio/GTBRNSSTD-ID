@@ -24,7 +24,6 @@ export class UserNewPageService
         }
     }
 
-    userLoadingMessage:string = "User loading..."
     userLoading:boolean = true;
     userIdFromRouteParams:string;
     user:User = new User('', '', [])

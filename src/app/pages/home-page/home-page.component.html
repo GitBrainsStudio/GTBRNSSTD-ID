@@ -4,63 +4,80 @@
     <app-header-default></app-header-default>
 
     <div class="container p-3">
-       
-        <div class="row align-items-center">
-           <h4>Applications (8)</h4> <i class="material-icons ml-1" style="font-size: 14px;" [routerLink]="'new'" >add</i>
-        </div>
 
-        <div class="row">
+        <ng-container *ngIf="clients$ | async; let clients; else clientsLoading;">
 
-            <div class="col-lg-3 client-preview mr-2 mb-2" *ngFor="let client of clients$ | async;">
-                <div class="row d-flex justify-content-between align-items-center">
-
-                    <h4 [routerLink]="['clients/guid']">Блог</h4>
-    
-                    <i class="material-icons" style="font-size: 14px;">open_in_new</i>
-    
-                </div>
-    
-                <p class="mt-1">
-                    Приложения для возможности размещения инфо-постов с важной информацией
-                </p>
-    
-                <hr>
-    
-                <div class="row">
-                    
-                   Пользователей: 12
-    
-                </div>
-            </div>
-
-        </div>
-
-
-   <!--      <div class="row align-items-center mt-5">
-            <h4>Accounts (94)</h4> <i class="material-icons ml-1" style="font-size: 14px;" [routerLink]="'new'" >add</i>
-         </div>
- 
-         <div class="row">
- 
-             <div class="col-lg-2 client-preview mr-2 mb-2" *ngFor="let user of users$ | async;">
-                 <div class="row d-flex justify-content-between align-items-center">
- 
-                     <h4 [routerLink]="['users/guid']"> {{ user.Login }} </h4>
-     
-                     <i class="material-icons" style="font-size: 14px;">open_in_new</i>
-     
-                 </div>
-                 <hr>
-     
-                 <div class="row">
-                     
-                     <app-badge [text]="role.Name" class="mr-1" *ngFor="let role of user.Roles"></app-badge>
-        
-     
-                 </div>
+            <div class="row align-items-center">
+                <h4>Applications ({{ clients.length }})</h4> <i class="material-icons ml-1" style="font-size: 14px;" [routerLink]="'new'" >add</i>
              </div>
- 
-         </div>
+     
+             <div class="row">
+     
+                 <div class="col-lg-3 client-preview mr-2 mb-2" *ngFor="let client of clients">
+                     <div class="row d-flex justify-content-between align-items-center">
+     
+                         <h4 [routerLink]="['clients/guid']">{{ client.Name }}</h4>
+         
+                         <i class="material-icons" style="font-size: 14px;" [routerLink]="client.URL">open_in_new</i>
+         
+                     </div>
+         
+                     <p class="mt-1">
+                        <span style="font-size: 12px;">Description: </span>{{ client.Description }}
+                     </p>
+         
+                     <hr>
+         
+                     <div class="row">
+                         
+                        <span style="font-size: 12px;">Users: {{ client.UsersCount }}</span>
+         
+                     </div>
+                 </div>
+     
+             </div>
+
+        </ng-container>
+       
+        <ng-template #clientsLoading>
+            Applications loading...
+        </ng-template>
+
+        <ng-container *ngIf="users$ | async; let users; else usersLoading;">
+
+            <div class="row align-items-center mt-5">
+                <h4>Users ({{ users.length }})</h4> <i class="material-icons ml-1" style="font-size: 14px;" [routerLink]="'new'" >add</i>
+             </div>
+     
+             <div class="row">
+     
+                 <div class="col-lg-2 client-preview mr-2 mb-2" *ngFor="let user of users$ | async;">
+                     <div class="row d-flex justify-content-between align-items-center">
+     
+                         <h4 [routerLink]="['users/guid']"> {{ user.Login }} </h4>
+         
+                         <i class="material-icons" style="font-size: 14px;">open_in_new</i>
+         
+                     </div>
+                     <hr>
+         
+                     <div class="row">
+                         
+                         <app-badge [text]="role.Name" class="mr-1" *ngFor="let role of user.Roles"></app-badge>
+            
+         
+                     </div>
+                 </div>
+     
+             </div>
+
+        </ng-container>
+
+        <ng-template #usersLoading>
+            Users loading...
+        </ng-template>
+
+        
 
          <div class="row align-items-center mt-5">
             <h4>Configurations </h4>
@@ -70,7 +87,7 @@
  
             <p>JWT algorithms: ['HS256'] </p>
  
-         </div> -->
+         </div>
     </div>
 
 </main>

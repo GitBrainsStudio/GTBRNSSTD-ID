@@ -6,24 +6,24 @@ export class Client
     Name:string;
     Description:string;
     URL:string;
-    Roles:Role[]
     UsersCount:number
+    Roles:Role[]
 
     constructor(
         id:string,
         name:string,
         description:string,
         url:string,
-        roles:Role[],
-        usersCount:number
+        usersCount:number,
+        roles:Role[]
     )
     {
         this.Id = id
         this.Name = name
         this.Description = description
         this.URL = url
-        this.Roles = roles
         this.UsersCount = usersCount
+        this.Roles = roles
     }
     
     get valid() : boolean
@@ -35,5 +35,17 @@ export class Client
             this.Id.length == 0)
             return false;
         return true
+    }
+
+
+    addRole(role:Role)
+    {
+        this.Roles.push(role)
+    }
+
+    removeRole(role:Role)
+    {
+        let roleIndex = this.Roles.findIndex(r => r.Id == role.Id)
+        this.Roles.splice(roleIndex, 1);
     }
 }

@@ -7,8 +7,6 @@
         </div>
 
         <div class="col" style="width: 300px;">
-            
-            <span style="font-size: 12px;" [ngClass]=" { 'hidden' : !pageService.userLoading, 'visible' : pageService.userLoading } ">{{ pageService.userLoadingMessage }}</span>
 
             <ng-container *ngIf="!pageService.userLoading;">
                 <app-user-details [user]="pageService.user"></app-user-details> 

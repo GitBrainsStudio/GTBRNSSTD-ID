@@ -11,8 +11,7 @@
 
         <div class="col" style="width: 300px;">
             
-            <span style="font-size: 12px;">{{ pageService.clientLoadingMessage }}</span>
-
+  
             <ng-container *ngIf="!pageService.clientLoading;">
                 <app-client [client]="pageService.client"></app-client> 
 
@@ -23,8 +22,6 @@
             </ng-container>
 
         </div>
-        
-        
 
     </div>
 

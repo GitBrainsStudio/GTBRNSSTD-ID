@@ -18,14 +18,8 @@ export class UserDetailsPageService
         .pipe(finalize(() => {  }))
         .subscribe(user => 
             {
-                this.userLoadingMessage = "User was loaded successfully!"
-
-                setTimeout(() => 
-                {
-                    this.user = user;
-                    this.userLoading = false
-
-                }, 1000)
+                this.user = user;
+                this.userLoading = false
             })
     }
 
@@ -34,7 +28,6 @@ export class UserDetailsPageService
         this.router.navigate(['/users/' + this.user.Id + '/edit'])
     }
 
-    userLoadingMessage:string = "User loading..."
     userLoading:boolean = true;
     userIdFromParams:string;
     user:User = new User('', '', [])

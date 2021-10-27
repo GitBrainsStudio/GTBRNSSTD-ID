@@ -21,14 +21,8 @@ export class ClientDetailsPageService
         .pipe(finalize(() => {  }))
         .subscribe(client => 
             {
-                this.clientLoadingMessage = "Client was loaded successfully!"
-
-                setTimeout(() => 
-                {
-                    this.client = client;
-                    this.clientLoading = false
-
-                }, 1000)
+                this.client = client;
+                this.clientLoading = false
             })
     }
 
@@ -37,8 +31,7 @@ export class ClientDetailsPageService
         this.router.navigate(['/clients/' + this.client.Id + '/edit'])
     }
 
-    clientLoadingMessage:string = "Client loading..."
     clientLoading:boolean = true;
     clientIdFromRouteParams:string;
-    client:Client = new Client('', '', '', '', [], 0)
+    client:Client = new Client('', '', '', '', 0, [])
 }

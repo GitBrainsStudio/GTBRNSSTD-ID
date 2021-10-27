@@ -8,8 +8,6 @@
 
         <div class="col" style="width: 300px;">
             
-            <span style="font-size: 12px;" [ngClass]=" { 'hidden' : !pageService.clientLoading, 'visible' : pageService.clientLoading } ">{{ pageService.clientLoadingMessage }}</span>
-
             <ng-container *ngIf="!pageService.clientLoading;">
                 <app-client-details [client]="pageService.client"></app-client-details> 
 

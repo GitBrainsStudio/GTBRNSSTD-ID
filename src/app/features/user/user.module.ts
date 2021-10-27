@@ -7,6 +7,7 @@ import { UserService } from './services/user.service';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { ClientModule } from '../client/client.module';
+import { ClientService } from '../client/services/client.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,6 @@ import { ClientModule } from '../client/client.module';
     UserDetailsComponent,
     UserFormComponent,
   ],
-  providers: [UserService]
+  providers: [UserService, ClientService]
 })
 export class UserModule { }

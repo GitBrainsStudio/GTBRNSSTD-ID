@@ -6,7 +6,6 @@ export class User
 {
     Id:string;
     Login:string;
-    AccessedPrograms:Client[]
     Roles:Role[];
 
 
@@ -21,17 +20,16 @@ export class User
         this.Roles = roles
     }
 
-    openAccessToTheProgram(program:Client, role:Role)
+    addRole(role:Role)
     {
-        this.AccessedPrograms.push(program)
+        this.Roles.push(role)
     }
 
-    closeAccessToTheProgram(program:Client)
+    removeRole(role:Role)
     {
-        let programIndex = this.AccessedPrograms.findIndex((p) => p.Id == program.Id)
-        this.AccessedPrograms.splice(programIndex, 1)
+        let roleIndex = this.Roles.findIndex(r => r.Id == role.Id)
+        this.Roles.splice(roleIndex, 1);
     }
-    
 
     get valid() : boolean
     {

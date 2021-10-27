@@ -26,7 +26,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/client-edit-page/client-edit-page.module').then((m) => m.ClientsEditPageModule),
   },
 
-/*   {
+  {
     path: 'users/new',
     loadChildren: () => import('./pages/user-new-page/user-new-page.module').then((m) => m.UserNewPageModule),
   }, 
@@ -38,8 +38,7 @@ const routes: Routes = [
   {
     path: 'users/:id/edit',
     loadChildren: () => import('./pages/user-edit-page/user-edit-page.module').then((m) => m.UserEditPageModule),
-  }, */
-
+  }, 
   {
     path: '**', redirectTo : '' 
   }

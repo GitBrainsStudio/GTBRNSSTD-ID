@@ -6,6 +6,7 @@ import { ClientEditPageService } from 'src/app/features/client/services/client-e
 import { ClientModule } from 'src/app/features/client/client.module';
 import { FooterModule } from 'src/app/features/footer/footer.module';
 import { HeaderModule } from 'src/app/features/header/header.module';
+import { ButtonModule } from 'src/app/features/button/button.module';
 
 
 
@@ -19,7 +20,8 @@ import { HeaderModule } from 'src/app/features/header/header.module';
     ClientsEditPageRoutingModule,
     FooterModule,
     HeaderModule,
-    ClientModule
+    ClientModule,
+    ButtonModule
   ],
   providers: [ClientEditPageService]
 })
