@@ -1,17 +1,15 @@
-import { Observable } from "rxjs"
-import { Client } from "../../client/models/client"
-
 export class Role
 {
     Id:string
     Name:string
+    Description:string
     ProgramId:string
-    Program:Observable<Client>
 
-    constructor(id:string, name:string, programId:string)
+    constructor(id:string, name:string, description:string, programId:string)
     {
         this.Id = id
         this.Name = name
+        this.Description = description
         this.ProgramId = programId
     }
 }

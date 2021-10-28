@@ -6,12 +6,8 @@ import { Client } from '../../models/client';
   templateUrl: './client.component.html',
   styleUrls: ['./client.component.css']
 })
-export class ClientComponent implements OnInit {
+export class ClientComponent  {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   @Input() client:Client;
 

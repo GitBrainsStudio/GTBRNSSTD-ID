@@ -8,11 +8,13 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { ClientModule } from '../client/client.module';
 import { ClientService } from '../client/services/client.service';
+import { UserRolesEditorComponent } from './components/user-roles-editor/user-roles-editor.component';
 
 @NgModule({
   declarations: [
     UserDetailsComponent,
     UserFormComponent,
+    UserRolesEditorComponent,
   ],
   imports: [
     CommonModule,
@@ -24,6 +26,7 @@ import { ClientService } from '../client/services/client.service';
   exports: [
     UserDetailsComponent,
     UserFormComponent,
+    UserRolesEditorComponent
   ],
   providers: [UserService, ClientService]
 })

@@ -8,6 +8,8 @@ import { ClientService } from './services/client.service';
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 import { BadgeModule } from '../badge/badge.module';
 import { ClientFormAddingInUserComponent } from './components/client-form-adding-in-user/client-form-adding-in-user.component';
+import { GuidGenerationService } from 'src/app/shared/services/guid-generation.service';
+import { ClientRolesEditorComponent } from './components/client-roles-editor/client-roles-editor.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { ClientFormAddingInUserComponent } from './components/client-form-adding
     ClientListComponent,
     ClientDetailsComponent,
     ClientFormAddingInUserComponent,
+    ClientRolesEditorComponent,
   ],
   imports: [
     CommonModule,
@@ -26,8 +29,9 @@ import { ClientFormAddingInUserComponent } from './components/client-form-adding
     ClientComponent,
     ClientListComponent,
     ClientDetailsComponent,
-    ClientFormAddingInUserComponent
+    ClientFormAddingInUserComponent,
+    ClientRolesEditorComponent
   ],
-  providers: [ClientService]
+  providers: [ClientService, GuidGenerationService]
 })
 export class ClientModule { }
