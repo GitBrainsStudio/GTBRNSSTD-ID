@@ -8,6 +8,7 @@ export class SnackbarDefaultService
 
     showSnackBar(message:string)
     {
+        console.log('s')
         if (this.visibility)
         {
             return;

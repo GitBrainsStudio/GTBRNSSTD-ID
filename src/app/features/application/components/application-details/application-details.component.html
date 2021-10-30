@@ -1,0 +1,22 @@
+<div class="col mt-3" style="word-wrap: break-word">
+    <p style="font-size: 12px;" class="mt-2">Name:</p> 
+    <p>{{ application.Name }}</p>
+
+    <p style="font-size: 12px;" class="mt-2">ID:</p> 
+    <span> {{ application.Id }}</span>
+
+    <p style="font-size: 12px;" class="mt-2">Description:</p> 
+    <p> {{ application.Description }} </p>
+
+    <p style="font-size: 12px;" class="mt-2">URL:</p> 
+    <p> {{ application.URL }} </p>
+
+</div>
+
+<div class="col">
+
+    <p style="font-size: 12px;" class="mt-1">Roles:</p> 
+    <div class="row">
+        <app-badge *ngFor="let role of application.Roles" [text]="role.Name" class="mr-1"></app-badge>
+    </div>
+</div>

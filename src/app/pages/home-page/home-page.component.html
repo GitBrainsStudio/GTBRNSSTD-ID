@@ -5,32 +5,32 @@
 
     <div class="container p-3">
 
-        <ng-container *ngIf="clients$ | async; let clients; else clientsLoading;">
+        <ng-container *ngIf="applications; else ApplicationsLoading">
 
             <div class="row align-items-center">
-                <h4>Applications ({{ clients.length }})</h4> <i class="material-icons ml-1" style="font-size: 14px;" [routerLink]="'clients/new'" >add</i>
+                <h4>Applications ({{ applications.length }})</h4> <i class="material-icons ml-1" style="font-size: 14px;" [routerLink]="'applications/new'" >add</i>
              </div>
      
              <div class="row">
      
-                 <div class="col-lg-3 card mr-2 mb-2" *ngFor="let client of clients">
+                 <div class="col-lg-3 card mr-2 mb-2" *ngFor="let application of applications">
                      <div class="row d-flex justify-content-between align-items-center">
      
-                         <h4 [routerLink]="['clients/guid']">{{ client.Name }}</h4>
+                         <h4 [routerLink]="['applications/' + Application.Id]">{{ Application.Name }}</h4>
          
-                         <i class="material-icons" style="font-size: 14px;" [routerLink]="client.URL">open_in_new</i>
+                         <i class="material-icons" style="font-size: 14px;" [routerLink]="Application.URL">open_in_new</i>
          
                      </div>
          
                      <p class="mt-1">
-                        <span style="font-size: 12px;">Description: </span>{{ client.Description }}
+                            {{ application.Description }}
                      </p>
          
                      <hr>
          
                      <div class="row">
                          
-                        <span style="font-size: 12px;">Users: {{ client.UsersCount }}</span>
+                        <span style="font-size: 12px;">Accounts: {{ application.AccountsCount }}</span>
          
                      </div>
                  </div>
@@ -39,22 +39,22 @@
 
         </ng-container>
        
-        <ng-template #clientsLoading>
+        <ng-template #ApplicationsLoading>
             Applications loading...
         </ng-template>
 
-        <ng-container *ngIf="users$ | async; let users; else usersLoading;">
+        <ng-container *ngIf="accounts; lse AccountsLoading;">
 
             <div class="row align-items-center mt-5">
-                <h4>Users ({{ users.length }})</h4> <i class="material-icons ml-1" style="font-size: 14px;" [routerLink]="'users/new'" >add</i>
+                <h4>Accounts ({{ accounts.length }})</h4> <i class="material-icons ml-1" style="font-size: 14px;" [routerLink]="'accounts/new'" >add</i>
              </div>
      
              <div class="row">
      
-                 <div class="col-lg-2 card mr-2 mb-2" *ngFor="let user of users$ | async;">
+                 <div class="col-lg-2 card mr-2 mb-2" *ngFor="let account of accounts;">
                      <div class="row d-flex justify-content-between align-items-center">
      
-                         <h4 [routerLink]="['users/guid']"> {{ user.Login }} </h4>
+                         <h4 [routerLink]="['accounts/' + Account.Id]"> {{ account.Login }} </h4>
          
          
                      </div>
@@ -62,7 +62,7 @@
          
                      <div class="row">
                          
-                        <span style="font-size: 12px;">Programs: 3</span>
+                        <span style="font-size: 12px;">Roles : {{ account.Roles.length }} </span>
          
                      </div>
                  </div>
@@ -71,8 +71,8 @@
 
         </ng-container>
 
-        <ng-template #usersLoading>
-            Users loading...
+        <ng-template #AccountsLoading>
+            Accounts loading...
         </ng-template>
     </div>
 
