@@ -1,0 +1,72 @@
+<main>
+
+    <app-header></app-header>
+
+    <div class="container p-3" [ngClass]="programs && accounts ? 'visible' : 'hidden'">
+
+        <ng-container *ngIf="programs;">
+            <div class="row align-items-center">
+                <h4>Programs ({{ programs.length }})</h4> <i class="material-icons ml-1" style="font-size: 14px;" [routerLink]="'programs/new'" >add</i>
+             </div>
+     
+             <div class="row">
+     
+                 <div class="col-lg-3 card m-1" *ngFor="let program of programs"  [routerLink]="['programs/' + program.Id]">
+                     <div class="row d-flex justify-content-between align-items-center">
+     
+                         <h4>{{ program.Id }}</h4>
+         
+         
+                     </div>
+         
+                     <p class="mt-1">
+                            {{ program.Description }}
+                     </p>
+         
+                     <hr>
+         
+                     <div class="row">
+                         
+                        <span style="font-size: 12px;">Accounts: <span *ngIf="program.Accounts | async as programAccounts;"> {{ programAccounts.length }}</span></span>
+         
+                     </div>
+                 </div>
+     
+             </div>
+        </ng-container>
+
+
+        <ng-container *ngIf="accounts; ">
+
+            <div class="row align-items-center mt-5">
+                <h4>Accounts ({{ accounts.length }})</h4> <i class="material-icons ml-1" style="font-size: 14px;" [routerLink]="'accounts/new'" >add</i>
+             </div>
+     
+             <div class="row">
+     
+                 <div class="col-lg-2 card m-1" *ngFor="let account of accounts;" [routerLink]="['accounts/' + account.Id]">
+                     <div class="row d-flex justify-content-between align-items-center">
+     
+                         <h4> {{ account.Login }} </h4>
+         
+         
+                     </div>
+                     <hr>
+         
+                     <div class="row">
+                         
+                        <span style="font-size: 12px;">Roles : {{ account.Roles.length }} </span>
+         
+                     </div>
+                 </div>
+     
+             </div>
+
+        </ng-container>
+
+
+    </div>
+
+</main>
+
+<app-footer></app-footer>

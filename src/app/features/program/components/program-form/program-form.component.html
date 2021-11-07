@@ -1,0 +1,27 @@
+<div class="col">
+    <div class="row mt-2">
+        <span style="font-size: 12px;">ID</span>
+        <input [(ngModel)]="program.Id">
+    </div>
+    <div class="row mt-2">
+        <span style="font-size: 12px;">Description</span>
+        <input [(ngModel)]="program.Description">
+    </div>
+    <div class="row mt-2">
+        <span style="font-size: 12px;">URL</span>
+        <input [(ngModel)]="program.URL">
+    </div>
+</div>
+
+<div class="col mt-2">
+
+    
+    <div class="row d-flex justify-content-start">
+        <p style="font-size: 12px;" class="mt-1">Roles:</p> 
+    </div>
+    <hr>
+    
+    <app-program-form-roles-editor [program]="program"></app-program-form-roles-editor>
+  
+    
+</div>
