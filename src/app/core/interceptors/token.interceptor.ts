@@ -5,13 +5,15 @@ import { EMPTY, Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { AuthenticationService } from 'src/app/features/authentication/services/authentication.service';
 import { Router } from '@angular/router';
+import { SnackbarService } from 'src/app/features/snackbar/services/snackbar.service';
 
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
     constructor(
         private authenticationService: AuthenticationService,
-        private router:Router) { }
+        private router:Router,
+        private snackbarService:SnackbarService) { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -31,7 +33,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
               if (errorMessage)
               {
-                console.log(errorMessage)
+                this.snackbarService.show(errorMessage)
               }
 
               if(response.status === 401) {

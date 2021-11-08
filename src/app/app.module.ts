@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthenticationModule } from './features/authentication/authentication.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
+import { SnackbarModule } from './features/snackbar/snackbar.module';
 
 
 @NgModule({
@@ -15,6 +15,7 @@ import { TokenInterceptor } from './core/interceptors/token.interceptor';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SnackbarModule,
     HttpClientModule
   ],
   bootstrap: [AppComponent],
