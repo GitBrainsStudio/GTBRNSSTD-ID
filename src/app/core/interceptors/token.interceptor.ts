@@ -26,11 +26,11 @@ export class TokenInterceptor implements HttpInterceptor {
 
 
         return next.handle(request).pipe(
-            catchError( response => {
+            catchError(response => {
               
               if(response.status === 401) {
                 this.authenticationService.logout()
-                this.router.navigateByUrl('/login?redirect=' + this.router.url)
+                this.router.navigate(['/login'], { queryParams: { redirect: this.router.url } });
                 return EMPTY
               }
               else return throwError(response);
