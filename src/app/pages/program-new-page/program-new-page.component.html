@@ -1,0 +1,25 @@
+<main>
+    <app-header></app-header>
+    <div class="container p-3">
+       
+        <div class="row align-items-center">
+           <h4>New program</h4> 
+        </div>
+
+        <div class="col" style="width: 300px;">
+            
+
+            <app-program-form [program]="pageService.program"></app-program-form>
+            <hr>
+
+            <div class="row d-flex justify-content-end mt-2">
+                <button (click)="pageService.save()">Save</button>
+            </div>
+        </div>
+        
+        
+
+    </div>
+
+</main>
+<app-footer></app-footer>

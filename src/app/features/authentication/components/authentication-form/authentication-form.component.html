@@ -1,0 +1,24 @@
+<div class="col p-2">
+    <div class="col align-items-center ">
+        <div class="row d-flex justify-content-center">
+            <h4>GitBrainsStudio</h4> 
+        </div>
+        <div class="row d-flex justify-content-center">
+            <span style="font-size: 12px;"> Identity Management System </span>
+        </div>
+       
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="row p-2">
+                <input [(ngModel)]="login" >
+            </div>
+            <div class="row p-2">
+                <input type="password" [(ngModel)]="password">
+            </div>
+            <div class="row d-flex justify-content-end p-2">
+                <button (click)="authenticate()" style="width: 100%;">Login</button>
+            </div>
+        </div>
+    </div>
+</div>

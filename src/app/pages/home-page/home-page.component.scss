@@ -1,0 +1,17 @@
+.card
+{
+    max-width: 300px;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    transition: .5s;
+}
+
+.card:hover
+{
+    cursor: pointer;
+    background-color: rgba(141, 12, 29, 0.774);
+    transition: .5s;
+}
+
