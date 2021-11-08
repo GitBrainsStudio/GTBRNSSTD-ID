@@ -21,20 +21,28 @@ export class TokenInterceptor implements HttpInterceptor {
         if (currentAccount && isLoggedIn)
         {
             request = request.clone({ headers: request.headers.set('authorization', `${currentAccount.access_token}`) });
-           
         }
 
 
         return next.handle(request).pipe(
-            catchError(response => {
-              
+            catchError((response:HttpErrorResponse) => {
+
+              const errorMessage = response?.error?.message
+
+              if (errorMessage)
+              {
+                console.log(errorMessage)
+              }
+
               if(response.status === 401) {
                 this.authenticationService.logout()
                 this.router.navigate(['/login'], { queryParams: { redirect: this.router.url } });
                 return EMPTY
               }
-              else return throwError(response);
+              else 
+                return throwError(response);
             })
+            
            )
 
     }
