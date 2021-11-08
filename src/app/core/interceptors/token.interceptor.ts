@@ -35,6 +35,11 @@ export class TokenInterceptor implements HttpInterceptor {
               {
                 this.snackbarService.show(errorMessage)
               }
+              
+              else
+              {
+                this.snackbarService.show('Не получен ответ от сервера')
+              }
 
               if(response.status === 401) {
                 this.authenticationService.logout()

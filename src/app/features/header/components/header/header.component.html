@@ -1,6 +1,6 @@
 <header >
     <div class="container p-3">
-        <div class="row">
+        <div class="row" *ngIf="innerWidth >= 415">
             <div class="col-lg">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="row align-items-center">
@@ -13,6 +13,26 @@
                             
                             <li class="row d-flex align-items-center" style="font-size: 12px;" >
                                 {{ authenticationService.authenticatedAccount.account.login }} 
+                                    <i class="material-icons ml-1" style="font-size: 14px;"  (click)="logout()">power_settings_new</i>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+         
+            </div>
+        </div>
+        <div class="row" *ngIf="innerWidth < 415">
+            <div class="col-lg">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="row align-items-center">
+                        <h4>GitBrainsStudio</h4> <span style="font-size: 12px;" class="ml-1"> | IMS </span>
+                    </div>
+                     
+                   
+                   <nav>
+                        <ul class="horizontal-ul" *ngIf="authenticationService.authenticatedAccount">
+                            
+                            <li class="row d-flex align-items-center" style="font-size: 12px;" >
                                     <i class="material-icons ml-1" style="font-size: 14px;"  (click)="logout()">power_settings_new</i>
                             </li>
                         </ul>

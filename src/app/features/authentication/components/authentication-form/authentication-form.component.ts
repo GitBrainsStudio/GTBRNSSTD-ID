@@ -1,20 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-authentication-form',
   templateUrl: './authentication-form.component.html',
-  styleUrls: ['./authentication-form.component.scss']
+  styleUrls: ['./authentication-form.component.scss'],
 })
-export class AuthenticationFormComponent implements OnInit {
+export class AuthenticationFormComponent {
 
   constructor(
     public authenticationService:AuthenticationService,
     private router:Router) { }
-
-  ngOnInit(): void {
-  }
+  
 
   authenticate()
   { 
@@ -25,7 +23,7 @@ export class AuthenticationFormComponent implements OnInit {
         else this.router.navigate(['/']) 
       })
   }
-  
+
   login:string = ""
   password:string = ""
 

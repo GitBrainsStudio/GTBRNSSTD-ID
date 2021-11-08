@@ -5,17 +5,16 @@ import { AuthenticationService } from 'src/app/features/authentication/services/
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  host: {
+    '(window:resize)': 'onResize($event)'
+  }
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   constructor(
     public authenticationService:AuthenticationService,
     private router:Router) { }
-
-  ngOnInit(): void {
-    
-  }
 
   logout()
   {
@@ -24,4 +23,11 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/login'])
     }
   }
+
+  onResize(event){
+    this.innerWidth = event.target.innerWidth
+  }
+
+  
+  innerWidth:number = window.innerWidth;
 }

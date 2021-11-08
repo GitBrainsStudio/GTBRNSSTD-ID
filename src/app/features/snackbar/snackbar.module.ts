@@ -16,6 +16,6 @@ import { SnackbarService} from './services/snackbar.service';
   exports: [
     SnackbarComponent
   ],
-  providers: [SnackbarService]
+  providers: [SnackbarService,]
 })
 export class SnackbarModule { }
